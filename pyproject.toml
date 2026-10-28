@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "text-editor-from-scratch"
+version = "0.1.0"
+description = "A small modal terminal text editor written from scratch in pure Python (a subset of vim) on raw terminal mode, checked against real vim and a real terminal emulator"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "SafraNako" }]
+keywords = ["editor", "vim", "terminal", "tty", "raw-mode", "education"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Editors",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/SafraNako/text-editor-from-scratch"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pyte>=0.8.2",
+]
+
+[project.scripts]
+ked = "kendi_editor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
